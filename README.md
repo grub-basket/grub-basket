@@ -70,7 +70,8 @@ as a fork because upstream has gone quiet.
 up / page down / bottom buttons and commands, originally built for e-ink devices where
 normal scrolling leaves ghosting. Adopted from [triski](https://github.com/chenshutian9610),
 with per-button toggles, smart hiding so they stay out of other plugins' way, and pop-out
-window support added.
+window support added. *Via BRAT — it shares the store version's plugin ID, so disable
+Page Scroll first.*
 
 **[Creases](https://github.com/grub-basket/obsidian-creases)** — Liam Cain's fold-management
 plugin, with a batch of longstanding bugs fixed: "always fold" silently breaking on
@@ -107,37 +108,19 @@ works.
 
 ### Patches for non-Obsidian plugins
 
-Bug fixes sent upstream to [jorio](https://github.com/jorio)'s projects — the retro-Mac
-libraries and tools behind his ports of the old Pangea games. Each one is a branch on my
-fork and an open pull request; nothing here is a competing release.
+Bug fixes sent upstream to [jorio](https://github.com/jorio)'s projects — his Git UI and
+the retro-Mac libraries and tools behind his ports of the old Pangea games. So far:
+[GitFourchette](https://github.com/jorio/gitfourchette),
+[Pomme](https://github.com/jorio/Pomme),
+[rsrcdump](https://github.com/jorio/rsrcdump),
+[OldMacArchiver](https://github.com/jorio/OldMacArchiver),
+[PROBE](https://github.com/jorio/PROBE), and [his profile
+README](https://github.com/jorio/jorio) — which is what this page is modelled on.
 
-**[Pomme](https://github.com/grub-basket/Pomme)** — a cross-platform reimplementation of
-the classic Macintosh Toolbox API.
-[Fixed 32-bit PICT decoding](https://github.com/jorio/Pomme/pull/11): the 4-plane branch
-walked rows with a 3-plane stride, so every row after the first read misaligned data and
-the image skewed progressively.
-[Guarded two sound-parser reads](https://github.com/jorio/Pomme/pull/12) against malformed
-input — an AIFF chunk whose size underflowed into an oversized allocation, and an
-unclamped Pascal-string length that returned uninitialized stack bytes.
-
-**[OldMacArchiver](https://github.com/grub-basket/OldMacArchiver)** — an unpacker for
-vintage Mac archive formats.
-[Hardened AppleDouble sidecar parsing](https://github.com/jorio/OldMacArchiver/pull/2):
-the untrusted `._name` file's entry table was used without bounds checks, so a crafted or
-truncated sidecar could throw on a negative length or try to allocate 2 GB.
-[Fixed byte sign-extension in FourCC](https://github.com/jorio/OldMacArchiver/pull/1) —
-any byte ≥ 0x80 sign-extended and flooded the high bits, which classic type and creator
-codes hit constantly.
-
-**[PROBE](https://github.com/grub-basket/PROBE)** — a realtime graphical profiler for LÖVE.
-[Made the sliding-window argument work](https://github.com/jorio/PROBE/pull/1): `init()`
-took a window size but the reader looked it up as an out-of-scope global, so it was always
-nil and the window stayed stuck at 60. Also scoped three variables that were leaking into
-`_G` from a library module.
-
-**[jorio](https://github.com/grub-basket/jorio)** — his profile README itself, which is
-what this page is modelled on.
-[Fixed the alt text and a stray tag](https://github.com/jorio/jorio/pull/1).
+Also [Blot](https://github.com/davidmerfield/blot), the folder-into-a-website publishing
+platform: [a batch of small correctness
+fixes](https://github.com/davidmerfield/blot/pull/1616), and [a fix for the sync progress
+bar resetting to 0% on re-render](https://github.com/davidmerfield/blot/pull/1617).
 
 ---
 
