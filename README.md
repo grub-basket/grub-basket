@@ -106,7 +106,7 @@ importer in Bases Toolbox, though the
 [hosted version](https://grub-basket.github.io/CSV-to-Obsidian-Properties-for-Bases/) still
 works.
 
-### Patches for non-Obsidian plugins
+### Patches for other people's projects
 
 Bug fixes sent upstream to [jorio](https://github.com/jorio)'s projects — his Git UI and
 the retro-Mac libraries and tools behind his ports of the old Pangea games. So far:
@@ -116,6 +116,13 @@ the retro-Mac libraries and tools behind his ports of the old Pangea games. So f
 [OldMacArchiver](https://github.com/jorio/OldMacArchiver),
 [PROBE](https://github.com/jorio/PROBE), and [his profile
 README](https://github.com/jorio/jorio) — which is what this page is modelled on.
+
+[Retrace](https://github.com/haseab/retrace), an open-source Rewind-style screen-history
+app for macOS, has a run of seven: the SQLCipher key no longer gets destroyed on a
+transient Keychain error (it fails closed rather than quietly falling back to plaintext),
+search works with encryption on, the key is redacted from error text, and redaction
+masking fails closed instead of persisting an unmasked frame — plus a JPEG encoding path
+that skips a TIFF round-trip.
 
 Also [Blot](https://github.com/davidmerfield/blot), the folder-into-a-website publishing
 platform: [a batch of small correctness
