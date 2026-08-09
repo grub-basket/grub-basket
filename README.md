@@ -1,6 +1,6 @@
 <h1>Hello!</h1>
 
-I have Claude Code use LLM models Opus and Fable build plugins for [Obsidian](https://obsidian.md) — mostly for capturing things fast
+I have Claude Code use LLM models Opus and Fable to build plugins for [Obsidian](https://obsidian.md) — mostly for capturing things fast
 and for editing a lot of notes at once.
 
 ### Newest project
@@ -11,6 +11,10 @@ Open a folder as an editable table, then work it like Excel — multi-cell selec
 fill down, TSV copy-paste to and from real spreadsheets, per-column filters, undo.
 
 ### Plugins I had Claude work on
+
+#### In the community store
+
+Install these from Obsidian itself — **Settings → Community plugins → Browse**.
 
 **[Stashpad](https://github.com/grub-basket/SP)** — a capture-first, chat-style notes
 workspace. Type at the bottom, press Enter, and your notes stack newest-first and nest
@@ -39,6 +43,12 @@ labeled images: anatomy plates, diagrams, maps, sheet music. Drop covers on the 
 scroll inside the image to uncover them a group at a time, instead of duplicating a slide
 per label the way you'd have to in PowerPoint. There's also a quiz mode that pulls cropped
 fragments from a whole folder and asks you to identify them out of context.
+
+#### Beta — BRAT only, for now
+
+Not in the store yet. Install with
+[BRAT](https://github.com/TfTHacker/obsidian42-brat): *Add beta plugin*, then paste the
+repo link.
 
 **[Trynalist](https://github.com/grub-basket/Trynalist)** — a Dynalist-style outliner
 where every line of the outline is a real Markdown note. Structure lives in frontmatter,
@@ -97,8 +107,39 @@ works.
 
 ### Patches for non-Obsidian plugins
 
+Bug fixes sent upstream to [jorio](https://github.com/jorio)'s projects — the retro-Mac
+libraries and tools behind his ports of the old Pangea games. Each one is a branch on my
+fork and an open pull request; nothing here is a competing release.
+
+**[Pomme](https://github.com/grub-basket/Pomme)** — a cross-platform reimplementation of
+the classic Macintosh Toolbox API.
+[Fixed 32-bit PICT decoding](https://github.com/jorio/Pomme/pull/11): the 4-plane branch
+walked rows with a 3-plane stride, so every row after the first read misaligned data and
+the image skewed progressively.
+[Guarded two sound-parser reads](https://github.com/jorio/Pomme/pull/12) against malformed
+input — an AIFF chunk whose size underflowed into an oversized allocation, and an
+unclamped Pascal-string length that returned uninitialized stack bytes.
+
+**[OldMacArchiver](https://github.com/grub-basket/OldMacArchiver)** — an unpacker for
+vintage Mac archive formats.
+[Hardened AppleDouble sidecar parsing](https://github.com/jorio/OldMacArchiver/pull/2):
+the untrusted `._name` file's entry table was used without bounds checks, so a crafted or
+truncated sidecar could throw on a negative length or try to allocate 2 GB.
+[Fixed byte sign-extension in FourCC](https://github.com/jorio/OldMacArchiver/pull/1) —
+any byte ≥ 0x80 sign-extended and flooded the high bits, which classic type and creator
+codes hit constantly.
+
+**[PROBE](https://github.com/grub-basket/PROBE)** — a realtime graphical profiler for LÖVE.
+[Made the sliding-window argument work](https://github.com/jorio/PROBE/pull/1): `init()`
+took a window size but the reader looked it up as an out-of-scope global, so it was always
+nil and the window stayed stuck at 60. Also scoped three variables that were leaking into
+`_G` from a library module.
+
+**[jorio](https://github.com/grub-basket/jorio)** — his profile README itself, which is
+what this page is modelled on.
+[Fixed the alt text and a stray tag](https://github.com/jorio/jorio/pull/1).
+
 ---
 
-Anything not in the community store installs through
-[BRAT](https://github.com/TfTHacker/obsidian42-brat). 
+The forks install through [BRAT](https://github.com/TfTHacker/obsidian42-brat) too.
 Issues and ideas welcome on any repo.
