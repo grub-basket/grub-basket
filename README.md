@@ -5,10 +5,10 @@ and for editing a lot of notes at once.
 
 ### Newest project
 
-<a href="https://github.com/grub-basket/GridSense"><img width="440" alt="GridSense" src="https://img.shields.io/badge/GridSense-A%20real%20spreadsheet%20over%20your%20notes-4c6ef5?style=for-the-badge"></a>
+<a href="https://github.com/grub-basket/Trynalist"><img width="440" alt="Trynalist" src="https://img.shields.io/badge/Trynalist-A%20Dynalist--style%20outliner-4c6ef5?style=for-the-badge"></a>
 
-Open a folder as an editable table, then work it like Excel — multi-cell selection,
-fill down, TSV copy-paste to and from real spreadsheets, per-column filters, undo.
+Import your Dynalist OPML or JSON and keep working the way you did — same keyboard chords,
+four views over the same outline — except every line is a real Markdown file in your vault.
 
 ### Plugins I had Claude work on
 
@@ -53,13 +53,22 @@ repo link.
 **[Trynalist](https://github.com/grub-basket/Trynalist)** — a Dynalist-style outliner
 where every line of the outline is a real Markdown note. Structure lives in frontmatter,
 the file body is the line plus its note, and there are four views over the same data:
-outline, flat, article, and a mind map. Nothing is locked inside the plugin. *Beta
-software — via BRAT for now, expect rough edges.*
+outline, flat, article, and a read-only mind map. Mirrors window a subtree from another
+document, and imports come from Dynalist OPML, Dynalist JSON, or indented text — so
+nothing is locked inside the plugin on the way in or out. *Beta software — via BRAT for
+now, expect rough edges.*
 
 **[Draft Tabs](https://github.com/grub-basket/Draft-Tabs)** — keep several drafts of the
 same note and flip between them with a tab strip above the editor. Rewrite a paragraph
 three ways, branch an outline, or keep a safe copy before you gut something. Each draft
 is an ordinary Markdown note. *Beta software — via BRAT for now, expect rough edges.*
+
+**[Sync Sentinel](https://github.com/grub-basket/Sync-Sentinel)** — Obsidian Sync silently
+refuses files past its size limit, so your 200 MB video never leaves the laptop it was made
+on. Sync Sentinel splits those into shards small enough for Sync to carry, then rebuilds the
+original byte-for-byte on your other devices, checked against SHA-256 hashes at every step.
+It also tracks which devices hold what, so you can reclaim the shard space once everyone has
+the real file. *Beta software, desktop only — via BRAT.*
 
 ### Community forks
 
@@ -125,9 +134,8 @@ masking fails closed instead of persisting an unmasked frame — plus a JPEG enc
 that skips a TIFF round-trip.
 
 Also [Blot](https://github.com/davidmerfield/blot), the folder-into-a-website publishing
-platform: [a batch of small correctness
-fixes](https://github.com/davidmerfield/blot/pull/1616), and [a fix for the sync progress
-bar resetting to 0% on re-render](https://github.com/davidmerfield/blot/pull/1617).
+platform, where [a batch of small correctness
+fixes](https://github.com/davidmerfield/blot/pull/1616) was merged.
 
 ---
 
