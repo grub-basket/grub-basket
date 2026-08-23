@@ -3,12 +3,17 @@
 I have Claude Code use LLM models Opus and Fable to build plugins for [Obsidian](https://obsidian.md) — mostly for capturing things fast
 and for editing a lot of notes at once.
 
-### Newest project
+### Newest projects
 
-<a href="https://github.com/grub-basket/Trynalist"><img width="440" alt="Trynalist" src="https://img.shields.io/badge/Trynalist-A%20Dynalist--style%20outliner-4c6ef5?style=for-the-badge"></a>
+<a href="https://github.com/grub-basket/Trynalist"><img width="215" alt="Trynalist" src="https://img.shields.io/badge/Trynalist-A%20Dynalist--style%20outliner-4c6ef5?style=for-the-badge"></a>
+<a href="https://github.com/grub-basket/Sync-Sentinel"><img width="215" alt="Sync Sentinel" src="https://img.shields.io/badge/Sync%20Sentinel-Sync%20your%20huge%20files-4c6ef5?style=for-the-badge"></a>
 
-Import your Dynalist OPML or JSON and keep working the way you did — same keyboard chords,
-four views over the same outline — except every line is a real Markdown file in your vault.
+**Trynalist** — import your Dynalist OPML or JSON and keep working the way you did, same
+keyboard chords and four views over the same outline, except every line is a real Markdown
+file in your vault.
+
+**Sync Sentinel** — Obsidian Sync quietly refuses anything past its size limit. This splits
+those files into shards it will carry, and rebuilds them byte-for-byte on the other side.
 
 ### Plugins I had Claude work on
 
