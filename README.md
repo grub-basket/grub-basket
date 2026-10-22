@@ -74,6 +74,15 @@ same note and flip between them with a tab strip above the editor. Rewrite a par
 three ways, branch an outline, or keep a safe copy before you gut something. Each draft
 is an ordinary Markdown note. *Beta software — via BRAT for now, expect rough edges.*
 
+**[Folder Bridge Local](https://github.com/grub-basket/Folder-Bridge-Local)** — brings
+folders from your PC, a mapped drive or a Windows network share into a small vault, so you
+don't have to make a whole department share the vault. Obsidian can't exclude folders, and
+on a big network drive that can stop it from loading at all; with this, it only ever reads
+the folders you mount. Built for Windows 10 and 11 and SMB shares, and it works on macOS
+too. A trimmed fork of Timmothy Escolopio's
+[Folder Bridge](https://github.com/tescolopio/Obsidian_FolderBridge). *Beta software,
+desktop only — via BRAT.*
+
 **[Sync Sentinel](https://github.com/grub-basket/Sync-Sentinel)** — protection against
 the ways syncing goes wrong, whichever sync tool you use. If two devices edit the same note
 while offline, it merges the two versions against their last shared copy, so you get one
