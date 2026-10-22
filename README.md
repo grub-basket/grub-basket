@@ -6,14 +6,16 @@ and for editing a lot of notes at once.
 ### Newest projects
 
 <a href="https://github.com/grub-basket/Trynalist"><img width="215" alt="Trynalist" src="https://img.shields.io/badge/Trynalist-A%20Dynalist--style%20outliner-4c6ef5?style=for-the-badge"></a>
-<a href="https://github.com/grub-basket/Sync-Sentinel"><img width="215" alt="Sync Sentinel" src="https://img.shields.io/badge/Sync%20Sentinel-Sync%20your%20huge%20files-4c6ef5?style=for-the-badge"></a>
+<a href="https://github.com/grub-basket/Sync-Sentinel"><img width="215" alt="Sync Sentinel" src="https://img.shields.io/badge/Sync%20Sentinel-Safer%20syncing-4c6ef5?style=for-the-badge"></a>
 
-**Trynalist** — import your Dynalist OPML or JSON and keep working the way you did, same
-keyboard chords and four views over the same outline, except every line is a real Markdown
-file in your vault.
+**Trynalist** — now in the community store. Import your Dynalist OPML or JSON and keep
+working the way you did, same keyboard chords and four views over the same outline, except
+every line is a real Markdown file in your vault.
 
-**Sync Sentinel** — Obsidian Sync quietly refuses anything past its size limit. This splits
-those files into shards it will carry, and rebuilds them byte-for-byte on the other side.
+**Sync Sentinel** — a safety net for syncing. When two devices edit the same note offline,
+it merges the edits where it can, instead of leaving you a conflict file to sort out. It keeps a version
+history of every save, recovers notes that a sync glitch wiped blank, and splits files too
+big for Obsidian Sync into pieces it will carry.
 
 ### Plugins I had Claude work on
 
@@ -43,6 +45,18 @@ plugins and themes as a link or a short paste-anywhere code, the way Bluesky sta
 work. Annotate each pick with your own note; on the other end everything installs
 *disabled* until the recipient reviews the pack.
 
+**[Trynalist](https://github.com/grub-basket/Trynalist)** — a Dynalist-style outliner
+where every line of the outline is a real Markdown note. Structure lives in frontmatter,
+the file body is the line plus its note, and there are four views over the same data:
+outline, flat, article, and a read-only mind map. Mirrors window a subtree from another
+document, and imports come from Dynalist OPML, Dynalist JSON, indented text, or straight
+from your Dynalist account — so nothing is locked inside the plugin on the way in or out.
+
+**[Highlight Migrator](https://github.com/grub-basket/Highlight-Migrator)** — moves old
+`<mark>` HTML highlights, like the ones the Highlightr plugin writes, over to Obsidian's
+native highlight colours. It scans the vault, suggests a native colour for each one it
+finds, backs up every note it's about to change, and can undo the whole run.
+
 **[Slide and Reveal](https://github.com/grub-basket/SnR)** — flashcard-style study of
 labeled images: anatomy plates, diagrams, maps, sheet music. Drop covers on the labels and
 scroll inside the image to uncover them a group at a time, instead of duplicating a slide
@@ -55,25 +69,21 @@ Not in the store yet. Install with
 [BRAT](https://github.com/TfTHacker/obsidian42-brat): *Add beta plugin*, then paste the
 repo link.
 
-**[Trynalist](https://github.com/grub-basket/Trynalist)** — a Dynalist-style outliner
-where every line of the outline is a real Markdown note. Structure lives in frontmatter,
-the file body is the line plus its note, and there are four views over the same data:
-outline, flat, article, and a read-only mind map. Mirrors window a subtree from another
-document, and imports come from Dynalist OPML, Dynalist JSON, or indented text — so
-nothing is locked inside the plugin on the way in or out. *Beta software — via BRAT for
-now, expect rough edges.*
-
 **[Draft Tabs](https://github.com/grub-basket/Draft-Tabs)** — keep several drafts of the
 same note and flip between them with a tab strip above the editor. Rewrite a paragraph
 three ways, branch an outline, or keep a safe copy before you gut something. Each draft
 is an ordinary Markdown note. *Beta software — via BRAT for now, expect rough edges.*
 
-**[Sync Sentinel](https://github.com/grub-basket/Sync-Sentinel)** — Obsidian Sync silently
-refuses files past its size limit, so your 200 MB video never leaves the laptop it was made
-on. Sync Sentinel splits those into shards small enough for Sync to carry, then rebuilds the
-original byte-for-byte on your other devices, checked against SHA-256 hashes at every step.
-It also tracks which devices hold what, so you can reclaim the shard space once everyone has
-the real file. *Beta software, desktop only — via BRAT.*
+**[Sync Sentinel](https://github.com/grub-basket/Sync-Sentinel)** — protection against
+the ways syncing goes wrong, whichever sync tool you use. If two devices edit the same note
+while offline, it merges the two versions against their last shared copy, so you get one
+note back instead of a `sync-conflict` file to untangle by hand. Every save goes into a
+local version history you can restore from, and a note that a network drive or cloud
+glitch wipes to empty can be put back the way it was. It also keeps backups (encrypted, if you like), and
+for Obsidian Sync users it splits files past the size limit (that 200 MB video) into
+pieces Sync will carry, then rebuilds them byte-for-byte on your other devices. Nothing is
+overwritten without a copy, so a problem can be fixed later rather than caught in the
+moment. *Beta software, desktop only — via BRAT.*
 
 ### Community forks
 
